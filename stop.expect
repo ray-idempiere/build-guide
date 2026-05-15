@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+set ip "localhost"
+spawn "/bin/bash"
+send "telnet $ip 12612\r"
+expect "'^]'."
+sleep 2
+send "exit\r"
+sleep 1
+send "y\r"
+expect eof
